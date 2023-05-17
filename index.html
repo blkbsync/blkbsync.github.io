@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dateien herunterladen</title>
+</head>
+<body>
+    <h1>Dateien herunterladen</h1>
+
+    <?php
+    // Pfad zum aktuellen Verzeichnis
+    $verzeichnis = './';
+
+    // Alle Dateien im Verzeichnis auflisten
+    $dateien = scandir($verzeichnis);
+
+    // Filtere "." und ".." aus der Liste
+    $dateien = array_diff($dateien, array('.', '..'));
+
+    // Zeige die Dateien als Download-Links an
+    if (count($dateien) > 0) {
+        echo '<ul>';
+        foreach ($dateien as $datei) {
+            echo '<li><a href="' . $datei . '">' . $datei . '</a></li>';
+        }
+        echo '</ul>';
+    } else {
+        echo 'Keine Dateien gefunden.';
+    }
+    ?>
+
+</body>
+</html>
