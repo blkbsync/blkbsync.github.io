@@ -1,0 +1,8 @@
+$svclist = Get-ChildItem HKLM:\SYSTEM\CurrentControlSet\services | ForEach-Object {Get-ItemProperty $_.PsPath}
+ForEach ($svc in $svclist) {
+    $svcpath = $svc.ImagePath -split ".exe"
+    if(($svcpath[0] -like "* *") -and ($svcpath[0] -notlike '"*') -and ($svcpath[0] -notlike "\*")) {
+        $svc | fl -Property DisplayName,ImagePath,PsPath
+        Get-Acl $svc.ImagePath | fl
+    }
+}
