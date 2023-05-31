@@ -1,22 +1,3 @@
-<#
-.SYNOPSIS
-  PowerShell adaptation of WinPEAS.exe / WinPeas.bat
-.DESCRIPTION
-  For the legal enumeration of windows based computers that you either own or are approved to run this script on
-.EXAMPLE
-  .\WinPeas.ps1
-.NOTES
-  Version:                    1.0
-  PEASS-ng Original Author:   carlospolop
-  WinPEAS.ps1 Author:         @RandolphConley
-  Creation Date:              10/4/2022
-  Website:                    https://github.com/carlospolop/PEASS-ng
-
-  TESTED: PoSh 5,7
-  UNTESTED: Posh 3,4
-  INCOMPATIBLE: Posh 2 or lower
-#>
-
 ######################## FUNCTIONS ########################
 
 # Gather KB from all patches installed
